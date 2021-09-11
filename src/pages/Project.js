@@ -5,20 +5,23 @@ import  project1 from '../images/image 22.png';
 import  project2 from '../images/project2.png';
 const Container  = styled.div`
 width: 100%;
-height:100% ;
+min-height:100% ;
 display: flex;
-
 align-items: center;
-justify-content: flex-start;
+justify-content: center;
 @media (max-width:1200px){
-     height: 90%;
+     min-height: 90%;
      margin-top: 10% ;
      font-size: max(2vw,12px);
+     
+
  }
 @media (max-width:500px){
    flex-direction: column;
    align-items: center;
    justify-content: space-around;
+margin-top:15%;
+margin-bottom:15%;
 }
 `
 const Project = styled.div`
@@ -26,7 +29,7 @@ const Project = styled.div`
  width:18% ;
  margin-left: 3%;
  background: white;
- min-height: min(40%,300px) ;
+ min-height: 12vmax ;
  border-radius: 16px;
  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
  display: flex;
@@ -67,8 +70,7 @@ const Stack = styled.div`
             title:"Chirper",
             stack:["React","Node","MongoDB"],
             image:project2
-        }
-    ]
+        },     ]
     return (
         <Layout title="Portfolio" active={2}>
           <Container>

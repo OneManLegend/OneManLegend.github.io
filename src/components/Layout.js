@@ -8,18 +8,20 @@ import resume from '../images/resume.png'
 import button from '../images/button.png'
 import github from '../images/github.png'
 const LayoutContainer = styled.div`
-width: 100%;
-height: 100vh;
+width: 100vw;
+min-height: 100%;
 display:flex ;
 align-items: center;
 justify-content: center;
 @media (max-width:1200px){
   flex-direction: column;
+  
 }
 `
 const LeftSection = styled.div`
  width: 20% ;
  height: 70vh ;
+ min-height: 50vh;
  background:#F3F3F3 ;
  display : flex;
  flex-direction: column;
@@ -28,13 +30,14 @@ const LeftSection = styled.div`
  border-radius: 16px;
  & > img {
      min-width: 90px ;
-     max-width: 120px;
-     width: 30%;
+     max-width: 150px;
+     width: 35%;
  }
 @media (max-width:1200px){
   width: 100%;
   font-size: max(1.5vw,12px) ;
   height: 50%;
+
   background: white;
   & > img {
       width: 15%;
@@ -46,17 +49,21 @@ const LeftSection = styled.div`
 const RightSection = styled.div`
 margin-left: 2%;
  width: 50% ;
+ display: grid;
+ place-items: center;
  padding-top:4% ;
-height: 70vh ;
+  height: 70vh ;
  background:#F3F3F3 ;
  position: relative;
-
  border-radius:16px ;
 @media (max-width:1200px){
     font-size: 12px;
   width: 100%;
-  height: 50%;
   margin: 0;
+  height:max-content; 
+  min-height: 50vh;
+  border-end-end-radius: 0;
+  border-end-start-radius: 0;
 }
 `
 const AppBar = styled.div`
@@ -65,6 +72,7 @@ const AppBar = styled.div`
  left: 0;
  width: 100%;
  height: 13%;
+ max-height: 80px;
  border-radius: 16px;
  display: flex;
  align-items: center;
@@ -76,6 +84,7 @@ const AppBar = styled.div`
 @media (max-width:1200px){
     margin-top: 2%;
    
+ padding: 0 ;
     flex-direction: column;
     background: inherit;
 }
@@ -107,8 +116,10 @@ min-width: 40%;
 `
 const Nav = styled.span`
 cursor:pointer;
+
  & > a {
-     text-decoration:  ${props=>props.active ? 'underline':'none'};
+text-decoration: none;
+     border-bottom:  ${props=>props.active ? 'solid #9361C9 1px':'none'};
  color: ${props=>props.active ? '#9361C9':'inherit'};
  }
 `
@@ -130,6 +141,7 @@ const IconsContainer = styled.div`
  width: 30%;
  justify-content: space-evenly;
  & > img {
+   min-width: 30px;
      width: 30% ;
  }
 @media (max-width:1200px){
@@ -145,9 +157,9 @@ function Layout({children,title,active}) {
           <h2>Syed Wadood</h2>
           <ChipTitle>Software Engineer</ChipTitle>
           <IconsContainer>
-             <img src={linkedIn} alt="linkedIn"/> 
-             <img src={resume} alt="resume"/> 
-             <img src={github} alt="github"/> 
+<img src="https://img.icons8.com/nolan/64/linkedin-circled.png"/>
+<img src="https://img.icons8.com/nolan/64/open-resume.png"/>
+<img src="https://img.icons8.com/nolan/64/github.png"/>
           </IconsContainer>
         </LeftSection>
         <RightSection>

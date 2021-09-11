@@ -32,13 +32,13 @@ const Skill = styled.div`
  justify-content: center;
  flex-direction: column;
  & > img {
-     width: 50%;
-     height:50%; 
+     width: 70%;
+     height:70%; 
  }
 `
 const Container = styled.div`
 
-height: 100%;
+min-height: 100%;
  display: flex;
  align-items: center;
  justify-content: space-evenly;
@@ -47,13 +47,20 @@ height: 100%;
  padding-right: 4%;
  padding-bottom: 1%;
  @media (max-width:1200px){
-     height: 90%;
+     min-height: 90%;
      margin-top: 10% ;
      font-size: max(1.5vw,10px);
  }
  @media (max-width:500px){
      margin-top: 12% ;
 }
+`
+const  Highlight = styled.span`
+ color:${({primary})=>primary ? "#A063C8":"#4FB1F2"}  ;
+ @media (max-width:1200px){
+
+ color: "#A063C8"  ;
+ }
 `
  function About() {
     const skills = [{
@@ -78,10 +85,10 @@ height: 100%;
     return (
         <Layout title="About Me" active={1}>
           <Container>
-           <p  style={{width:'80%'}} >I am a 21 year old software engineering student at <span style={{"color":"#9F62C8"}}>Ryerson</span><span  style={{"color":"#44B0F4"}} > University</span>.Currently, I am seeking a 8-16 month co-op position or a summer 2021 internship.</p> 
+           <p  style={{width:'80%'}} >I am a 21 year old software engineering student at <Highlight primary>Ryerson</Highlight><Highlight blue  > University</Highlight>.Currently, I am seeking a 8-16 month co-op position or a summer 2021 internship.</p> 
            <p style={{width:'80%'}} >I have internship and project based experience with JavaScript and done coursework in Java and C#</p>
            <Skills>
-               <h1>Skills</h1>
+               <h2>Skills</h2>
                <SkillsGrid>
                     {skills.map((skill)=><Skill key={skill.title}>
                         <img  src={ skill.image} alt={skill.title} />

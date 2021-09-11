@@ -11,15 +11,19 @@ import emailjs from "emailjs-com";
 import sendButton from '../images/sendButton.png';
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+
   display: grid;
-  
+ min-height : 60vh ;
   place-items: center;
   @media (max-width:1200px){
-      height: 90%;
-      margin-top: 2%;
+      margin-top: 5%;
       font-size:max(1.5vw,12px);
   }
+@media (max-width:500px){
+  margin-top:20%; 
+  }
+  
 `;
 const Form = styled.form`
   padding: 1%;
@@ -27,8 +31,17 @@ const Form = styled.form`
   background: white;
   border-radius: 10px;
   height: 80%;
-  width: 70%;
+  width: 80%;
   position: relative;
+
+  @media (max-width:1200px){
+    width: 60% ;
+  }
+@media (max-width:500px){
+  height : 60vh ;
+  padding: .5%;
+  width:85%;
+  }
 `;
 const Input = styled.div`
 display :flex;
@@ -45,12 +58,14 @@ grid-area:${({gridArea})=>gridArea};
     min-height:80%;
 background: #F3F3F3;
     border: 1px solid rgba(0,0,0,0.2);
+
 }
 `;
 const InputsContainer = styled.div`
+
 margin-top: 2%;
 display: grid;
-grid-gap: 1%;
+grid-gap: 5%;
 width: 100%;
 height: 90%;
 grid-template-areas: 
@@ -63,7 +78,19 @@ grid-template-areas:
 grid-template-columns: 1fr 1fr ;
 grid-template-rows: 1fr 1fr 1fr 1fr;
 
-@media (min-width: 1200px) {
+
+@media (max-width: 700px) {
+ grid-template-areas  :
+ "input1"
+ "input2"
+ "input3"
+ "text"
+ "button"
+ ;
+grid-template-columns: 1fr ;
+grid-template-rows: 1fr 1fr 1fr 1fr 40px;
+grid-gap: 1%;
+
 
 }
 `
