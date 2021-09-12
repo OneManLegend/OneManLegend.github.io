@@ -96,6 +96,7 @@ grid-gap: 1%;
 `
 ;
 const SendButton = styled.button`
+cursor: pointer;
 height: 40%;
  width:20%;
  margin: auto;
@@ -103,24 +104,36 @@ height: 40%;
  background-color: white;
  background-image: url(${sendButton});
  background-size: 100% 100%;
+ & > h4 {
+background: rgb(112,181,239);
+background: linear-gradient(90deg, rgba(112,181,239,1) 0%, rgba(159,70,189,1) 80%, rgba(165,55,182,1) 100%, rgba(0,212,255,1) 100%);
+ background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ }
 `
 
 function Contact() {
+  const [processing,setProcessing]=React.useState(false);
   function sendEmail(e) {
     e.preventDefault();
-
+    console.log(e.target)
+    setProcessing(true);
     emailjs
       .sendForm(
-        "service_rprmaxp",
-        "template_tb71g9p",
+        "service_9ok9i0r",
+        "template_uuh6gz9",
         e.target,
-        "user_hJCKEz2nj8HK9IltgQYcs"
+        "user_Ft6WAfLhJPpcoqKoYvuf0"
       )
       .then(
         (result) => {
+          setProcessing(false)
           console.log(result.text);
         },
         (error) => {
+
+          setProcessing(false)
           console.log(error.text);
         }
       );
@@ -149,14 +162,14 @@ function Contact() {
 
             <Input gridArea="input3">
               <label>Company</label>
-              <input type="text" name="company" />
+              <input type="text" name="company_name" />
             </Input>
             <Input gridArea="text">
               <label>Project Description / Message</label>
               <textarea name="message" />
             </Input>
   <Input gridArea="button">
-  <SendButton type="submit">Send</SendButton>
+  <SendButton disabled={processing} type="submit" value="Send"><h4>Send</h4></SendButton>
             </Input>
           </InputsContainer>
         </Form>

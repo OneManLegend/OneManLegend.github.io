@@ -7,6 +7,10 @@ const Container  = styled.div`
 width: 100%;
 min-height:100% ;
 display: flex;
+
+border-end-end-radius:16px;
+border-end-start-radius:16px;
+ background:#F3F3F3 ;
 align-items: center;
 justify-content: center;
 @media (max-width:1200px){
@@ -26,11 +30,11 @@ margin-bottom:15%;
 `
 const Project = styled.div`
 
- width:18% ;
+ width:20% ;
  margin-left: 3%;
  background: white;
- min-height: 12vmax ;
  border-radius: 16px;
+ min-height: 13vmax;
  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
  display: flex;
  flex-direction: column;
@@ -41,7 +45,15 @@ const Project = styled.div`
  & > img {
      width: 30%;
  }
+@media (max-width:1200px){
+
+ min-height: 22vmax ;
+}
+@media (max-width:700px){
+    width:30%;
+}
 @media (max-width:500px){
+
     width: 30%;
     font-size: 10px;
     margin-top: 10%;

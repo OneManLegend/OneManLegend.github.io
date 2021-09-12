@@ -30,8 +30,8 @@ const LeftSection = styled.div`
  border-radius: 16px;
  & > img {
      min-width: 90px ;
-     max-width: 150px;
-     width: 35%;
+     max-width: 180px;
+     width: 45%;
  }
 @media (max-width:1200px){
   width: 100%;
@@ -40,7 +40,7 @@ const LeftSection = styled.div`
 
   background: white;
   & > img {
-      width: 15%;
+      width: 20%;
       
   }
   border-radius: 0;
@@ -133,6 +133,13 @@ margin-top: 3%;
   background-size:100%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  & > h3 {
+background: rgb(112,181,239);
+background: linear-gradient(90deg, rgba(112,181,239,1) 0%, rgba(159,70,189,1) 80%, rgba(165,55,182,1) 100%, rgba(0,212,255,1) 100%);
+ background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  } 
 `
 const IconsContainer = styled.div`
  margin: 5%;
@@ -140,8 +147,8 @@ const IconsContainer = styled.div`
  align-items: center;
  width: 30%;
  justify-content: space-evenly;
- & > img {
-   min-width: 30px;
+ & > a > img {
+   min-width: 40px;
      width: 30% ;
  }
 @media (max-width:1200px){
@@ -154,12 +161,14 @@ function Layout({children,title,active}) {
         <LayoutContainer>
         <LeftSection>
           <img src={syed} alt="syed"/>
+
           <h2>Syed Wadood</h2>
-          <ChipTitle>Software Engineer</ChipTitle>
+          <br/>
+          <ChipTitle><h3>Software Engineer</h3></ChipTitle>
           <IconsContainer>
-<img src="https://img.icons8.com/nolan/64/linkedin-circled.png"/>
-<img src="https://img.icons8.com/nolan/64/open-resume.png"/>
-<img src="https://img.icons8.com/nolan/64/github.png"/>
+<a href="https://www.linkedin.com/in/abdul-wadood-syed-978085220/"><img src="https://img.icons8.com/nolan/64/linkedin-circled.png"/></a>
+<a href="resume.pdf" download><img src="https://img.icons8.com/nolan/64/open-resume.png"/></a>
+<a href="https://github.com/4bdulWadood"><img src="https://img.icons8.com/nolan/64/github.png"/></a>
           </IconsContainer>
         </LeftSection>
         <RightSection>
