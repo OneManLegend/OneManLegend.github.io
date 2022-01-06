@@ -6,7 +6,7 @@ import react from '../images/react.png';
 import node from '../images/node.png'
 import figma from '../images/figma.png'
 import python from '../images/python.png'
-import sqlite from '../images/sqlite.png'
+import sql from '../images/sqlite.png'
 const Skills = styled.div`
  display: flex;
  flex-direction: column;
@@ -79,13 +79,13 @@ const  Highlight = styled.span`
              image:python,
              title:'Python'
     },{
-             image:sqlite,
-             title:'SQLite'
+             image:sql,
+             title:'SQL'
     }]
     return (
         <Layout title="About Me" active={1}>
           <Container>
-           <p  style={{width:'80%'}} >I am a 21 year old software engineering student at <Highlight primary>Ryerson</Highlight><Highlight blue  > University</Highlight>.Currently, I am seeking a 8-16 month co-op position or a summer 2021 internship.</p> 
+           <p  style={{width:'80%'}} >I am a 21 year old software engineering student at Ryerson University. Currently, I am seeking a summer 2022 internship.</p> 
            <p style={{width:'80%'}} >I have internship and project based experience with JavaScript and done coursework in Java and C#</p>
            <Skills>
                <h2>Skills</h2>
